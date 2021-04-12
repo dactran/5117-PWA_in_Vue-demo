@@ -72,3 +72,30 @@ workbox.routing.registerRoute(
       ],
     }),
   );
+
+  // Background syncing (adapted from https://developers.google.com/web/tools/workbox/modules/workbox-background-sync)
+  // 
+  // Simple, non-queuing version
+  // const bgSyncPlugin = new workbox.backgroundSync.Plugin('myQueueName', {
+  //   maxRetentionTime: 24 * 60 // Retry for max of 24 Hours (specified in minutes)
+  // });
+  // workbox.routing.registerRoute(
+  //   /\/api\/.*\/*.json/,
+  //   new workbox.strategies.NetworkOnly({
+  //     plugins: [bgSyncPlugin]
+  //   }),
+  //   'POST'
+  // );
+  // 
+  // BG sync with queue
+  const queue = new workbox.backgroundSync.Queue('delayedRequests');
+  self.addEventListener('fetch', (event) => {
+    // Clone the request to ensure it's safe to read when
+    // adding to the Queue.
+    const promiseChain = fetch(event.request.clone()).catch((err) => {
+      return queue.pushRequest({request: event.request});
+    });
+  
+    event.waitUntil(promiseChain);
+  });
+
