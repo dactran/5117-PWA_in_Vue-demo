@@ -1,0 +1,21 @@
+Overview of vue/cli-plugin-pwa (interfaces workbox-webpack-plugin)
+https://cli.vuejs.org/core-plugins/pwa.html
+https://developers.google.com/web/tools/workbox/modules/workbox-webpack-plugin
+
+Guide to precaching/ dynamic caching
+https://developers.google.com/web/tools/workbox/guides/get-started#precaching
+
+Overview of workbox modules
+https://developers.google.com/web/tools/workbox/modules
+
+Guide to background syncing
+https://developers.google.com/web/tools/workbox/modules/workbox-background-sync
+
+Includes guide to push notification support
+https://www.youtube.com/watch?v=15Yr-J4X34M&ab_channel=ThisDotMedia
+
+Useful explanation of caching strategies
+https://dev.to/pegahsafaie/pwa-for-vue-applications-a-practical-guide-4de3
+
+Overview of PWA features beyond scope
+https://whatwebcando.today/
