@@ -11,12 +11,6 @@
  * See https://goo.gl/2aRDsh
  */
 
-importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
-
-importScripts(
-  "/precache-manifest.9b4cf1e2a0a516c8bb002a043b0fcc74.js"
-);
-
 workbox.core.setCacheNameDetails({prefix: "pwa-in-vue-demo"});
 
 self.addEventListener('message', (event) => {
